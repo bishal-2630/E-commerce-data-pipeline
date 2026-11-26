@@ -1,0 +1,26 @@
+version: 2
+
+models:
+  - name: stg_customers
+    description: One row per customer_id (one per order). customer_unique_id identifies the real person.
+
+  - name: stg_order_items
+    description: One row per item within an order, with typed price and freight.
+
+  - name: stg_order_payments
+    description: One row per payment record. An order can have several.
+
+  - name: stg_order_reviews
+    description: One review per order (the most recent), score 1 to 5.
+
+  - name: stg_category_translation
+    description: Portuguese to English product category lookup.
+
+  - name: stg_products
+    description: One row per product, with the category translated to English.
+
+  - name: stg_sellers
+    description: One row per seller.
+
+  - name: stg_geolocation
+    description: One row per zip code prefix, with averaged coordinates.

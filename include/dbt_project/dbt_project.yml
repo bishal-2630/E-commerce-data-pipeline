@@ -1,0 +1,13 @@
+name: olist
+version: "1.0"
+profile: olist
+model-paths: ["models"]
+macro-paths: ["macros"]
+models:
+  olist:
+    silver:
+      +schema: SILVER
+      +materialized: table
+    gold:
+      +schema: GOLD
+      +materialized: table

@@ -1,0 +1,32 @@
+version: 2
+sources:
+  - name: bronze
+    database: ECOM
+    schema: BRONZE
+    tables:
+      - name: orders
+        description: One row per customer order, with status and purchase/delivery timestamps.
+
+      - name: customers
+        description: One row per customer_id, with the customer's city, state and zip prefix. Use customer_unique_id to identify the actual person.
+
+      - name: order_items
+        description: One row per item in an order, with product, seller, price and freight cost.
+
+      - name: order_payments
+        description: One row per payment record for an order.
+
+      - name: order_reviews
+        description: Customer review scores (1 to 5) and comments, linked to orders.
+
+      - name: products
+        description: Product catalogue with category name (in Portuguese) and physical dimensions.
+
+      - name: sellers
+        description: One row per marketplace seller, with city and state.
+
+      - name: geolocation
+        description: Latitude and longitude per zip code prefix.
+
+      - name: product_category_translation
+        description: Lookup table that maps Portuguese product category names to English.
