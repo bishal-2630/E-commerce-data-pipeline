@@ -12,3 +12,6 @@ models:
 
   - name: dim_date
     description: Calendar table with one row per day from 2016-01-01 to 2018-12-31, with year, quarter, month, weekday and weekend flag.
+
+  - name: fact_orders
+    description: One row per order, with customer, delivery performance (days, delay, late flag), revenue, freight, payment total and review score.
