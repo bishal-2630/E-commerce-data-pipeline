@@ -1,0 +1,34 @@
+version: 2
+
+models:
+  - name: stg_orders
+    description: >
+      Cleaned orders. One row per order_id, deduplicated to the latest
+      ingested copy, with timestamps cast from text to TIMESTAMP.
+    columns:
+      - name: order_id
+        description: Unique identifier of the order.
+        tests: [unique, not_null]
+      - name: customer_id
+        description: Customer on this order. Links to stg_customers.
+        tests: [not_null]
+      - name: order_status
+        description: Lowercase order status.
+        tests:
+          - accepted_values:
+              values:
+                [
+                  delivered,
+                  shipped,
+                  canceled,
+                  unavailable,
+                  invoiced,
+                  processing,
+                  created,
+                  approved,
+                ]
+      - name: purchased_at
+        description: When the customer placed the order.
+        tests: [not_null]
+      - name: delivered_at
+        description: When the customer received the order. NULL if not yet delivered.
