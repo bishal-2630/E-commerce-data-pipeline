@@ -3,3 +3,12 @@ version: 2
 models:
   - name: dim_customer
     description: One row per real customer (customer_unique_id), with latest city and state and order history.
+
+  - name: dim_product
+    description: One row per product, with English category, dimensions, volume and a weight class (light, medium, heavy).
+
+  - name: dim_seller
+    description: One row per seller, with city, state and map coordinates from the cleaned geo-location table.
+
+  - name: dim_date
+    description: Calendar table with one row per day from 2016-01-01 to 2018-12-31, with year, quarter, month, weekday and weekend flag.
