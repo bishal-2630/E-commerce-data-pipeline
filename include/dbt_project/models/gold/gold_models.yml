@@ -15,3 +15,18 @@ models:
 
   - name: fact_orders
     description: One row per order, with customer, delivery performance (days, delay, late flag), revenue, freight, payment total and review score.
+
+  - name: fact_order_items
+    description: One row per order item, with product, seller, customer, price, freight and item total.
+
+  - name: agg_daily_sales
+    description: Daily orders, revenue, freight and average order value. Excludes canceled and unavailable orders.
+
+  - name: agg_monthly_revenue
+    description: Monthly orders, customers, revenue and month-over-month growth percentage.
+
+  - name: agg_delivery_performance
+    description: Delivery days, on-time percentage and average review score per customer state, for delivered orders.
+
+  - name: agg_product_category_performance
+    description: Items sold, orders, revenue and average price per product category.
